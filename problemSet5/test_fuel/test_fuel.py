@@ -26,6 +26,8 @@ def test_convert_ValueError_float():
 def test_convert_ValueError_x_greater_y():
     with pytest.raises(ValueError):
         convert("3/2")
+    with pytest.raises(ValueError):
+        convert("10/9")
 
 
 def test_convert_ZeroDivisionError():
@@ -33,7 +35,10 @@ def test_convert_ZeroDivisionError():
         convert("2/0") 
     with pytest.raises(ZeroDivisionError):
         convert("0/0") 
-    
+    with pytest.raises(ZeroDivisionError):
+        convert("1/0")
+    with pytest.raises(ZeroDivisionError):
+        convert("10/0")  
 
 def test_convert_0_100():
     assert convert("0/1") == 0
@@ -50,6 +55,15 @@ def test_gauge_F():
 def test_gauge_percent():
     assert gauge(23) == "23%"
 
+# def test_error():
+#     with pytest.raises(ValueError):
+#         gauge(101)
+#     with pytest.raises(ValueError):
+#         gauge(-1)
+#     with pytest.raises(TypeError):
+#         gauge("100")
+#     with pytest.raises(TypeError):
+#         gauge("24")
 
 
 
