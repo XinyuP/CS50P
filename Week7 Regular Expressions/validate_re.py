@@ -2,8 +2,9 @@ import re
 
 email = input("What's your email? ").strip()
 
-if re.search(r"^[^@]+@[^@]+\.edu$", email):
 # if re.search(r"^..*@..*\.edu$", email):
+# if re.search(r"^[^@]+@[^@]+\.edu$", email):
+if re.search(r"^[a-zA-Z0-9_]+@[a-zA-Z0-9_]+\.edu$", email):
 
     print(email, "Valid")
 else:
@@ -60,8 +61,9 @@ re.search(r"^.+[@].+\.edu$", email)
 
 
 
-[] set of characters
-[^] complementing the set
+[] set of characters allowed
+[^] complementing the set (set of characters not allowed)
+
 
 if re.search(r"^[^@]+@[^@]+\.edu$", email)
 
@@ -69,13 +71,14 @@ if re.search(r"^[^@]+@[^@]+\.edu$", email)
 [^@]: "any char except @"
 [^@]+: one or more "any char except @"
 
-
 \.edu: followed by literally .edu
-
 
 $: match at the end 
 
  
+
+
+
 
 
 
