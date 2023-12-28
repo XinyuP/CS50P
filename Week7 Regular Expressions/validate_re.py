@@ -5,7 +5,8 @@ email = input("What's your email? ").strip()
 # if re.search(r"^..*@..*\.edu$", email):
 # if re.search(r"^[^@]+@[^@]+\.edu$", email):
 # if re.search(r"^[a-zA-Z0-9_]+@[a-zA-Z0-9_]+\.edu$", email):
-if re.search(r"^\w+@\w+\.edu$", email):
+# if re.search(r"^\w+@\w+\.edu$", email):
+if re.search(r"^\w+@\w+\.(edu|com|gov|net|org)$", email):
 
     print(email, "Valid")
 else:
@@ -122,4 +123,17 @@ It includes space, tab(\t), newline (\n), carriage return (\r), form feed (\f), 
 So, it's more like [ \t\r\n\f\v].
 
  
+
+
+
+if re.search(r"^\w+@\w+\.(edu|com|gov|net|org)$", email)
+
+A|B either A or B
+
+(...) a group
+
+(?:...) non-capturing version
+
+
+
 """
