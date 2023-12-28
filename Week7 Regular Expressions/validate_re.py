@@ -4,7 +4,8 @@ email = input("What's your email? ").strip()
 
 # if re.search(r"^..*@..*\.edu$", email):
 # if re.search(r"^[^@]+@[^@]+\.edu$", email):
-if re.search(r"^[a-zA-Z0-9_]+@[a-zA-Z0-9_]+\.edu$", email):
+# if re.search(r"^[a-zA-Z0-9_]+@[a-zA-Z0-9_]+\.edu$", email):
+if re.search(r"^\w+@\w+\.edu$", email):
 
     print(email, "Valid")
 else:
@@ -79,7 +80,32 @@ $: match at the end
 
 
 
+[a-zA-Z0-9_] 
+replaced with \w
 
 
 
+\w represents "word character"
+which is commonly known as a alphanumeric symbol 
+
+
+
+In Python's re module, which is used for working with regular expressions, 
+\w is a special sequence that matches any alphanumeric character, 
+including letters, numbers, and underscores. 
+
+It's like a shortcut for matching common character types.
+
+To break it down:
+
+Alphanumeric characters: 
+These are your basic letters and numbers. So, 
+\w will match 
+    'a', 'b', 'c', ..., 'z', 
+    'A', 'B', 'C', ..., 'Z', 
+    '0', '1', '2', ..., '9'.
+    Underscores: It also matches the underscore character ('_').
+
+
+    
 """
