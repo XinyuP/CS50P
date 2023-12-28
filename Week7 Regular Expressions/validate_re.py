@@ -107,5 +107,19 @@ These are your basic letters and numbers. So,
     Underscores: It also matches the underscore character ('_').
 
 
-    
+
+
+\d = [0-9]
+\D = [^0-9]
+\s = whitespace chars [ \t\r\n\f\v]
+\S = not a whitespace char 
+\w = [a-zA-Z0-9_]
+\W = [^a-zA-Z0-9_]
+
+
+\s matches any whitespace character. 
+It includes space, tab(\t), newline (\n), carriage return (\r), form feed (\f), and vertical tab (\v). 
+So, it's more like [ \t\r\n\f\v].
+
+ 
 """
