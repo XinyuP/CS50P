@@ -45,7 +45,7 @@ note that this is different from finding a zero-length match at some point in th
 
 
 
-
+********
 re.match(pattern, string, flags=0)
 
 Don't need to specify the ^ symbol at the beginning
@@ -53,6 +53,16 @@ re.match automatically start matching from the beginning
 
 re.match("c", "abcdef")    # No match
 re.search("c", "abcdef")   # Match
+
+
+********
+re.fullmatch(pattern, string, flags=0)
+
+Don't need to specify the ^ or & symbol
+check both the match at the start and end of string
+
+re.fullmatch("p.*n", "python") # Match
+re.fullmatch("r.*n", "python") # No match
 
 
 
@@ -85,6 +95,18 @@ re.search() checks for a match "anywhere" in the string (this is what Perl does 
 re.match() checks for a match only at the "beginning" of the string
 
 re.fullmatch() checks for "entire" string to be a match
+
+
+
+
+Document: 
+
+re.fullmatch(pattern, string, flags=0)
+If the whole string matches the regular expression pattern, 
+return a corresponding Match. 
+
+Return None if the string does not match the pattern; 
+note that this is different from a zero-length match.
 
 
 
