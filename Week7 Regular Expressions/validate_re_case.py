@@ -45,4 +45,47 @@ note that this is different from finding a zero-length match at some point in th
 
 
 
+
+re.match(pattern, string, flags=0)
+
+Don't need to specify the ^ symbol at the beginning
+re.match automatically start matching from the beginning
+
+re.match("c", "abcdef")    # No match
+re.search("c", "abcdef")   # Match
+
+
+
+
+
+Document: 
+re.match(pattern, string, flags=0)
+
+If zero or more characters at the beginning of string match the regular expression pattern, 
+return a corresponding Match.
+
+Return None if the string does not match the pattern; 
+
+note that this is different from a zero-length match.
+
+Note that even in MULTILINE mode, re.match() will only match at the 
+beginning of the string and not at the beginning of each line.
+
+If you want to locate a match anywhere in string, use search() 
+instead (see also search() vs. match()).
+
+
+
+
+search() vs. match()
+Python offers different primitive operations based on regular expressions:
+
+re.search() checks for a match "anywhere" in the string (this is what Perl does by default)
+
+re.match() checks for a match only at the "beginning" of the string
+
+re.fullmatch() checks for "entire" string to be a match
+
+
+
 """
