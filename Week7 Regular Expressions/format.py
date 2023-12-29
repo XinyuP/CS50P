@@ -8,10 +8,10 @@ import re
 # print(f"hello, {name}")
 
 
-
-# use () to capture the first name and last name
-# anything surrounded by () will be returned to us 
-
+"""
+use () to capture the first name and last name
+anything surrounded by () will be returned to us 
+"""
 
 name = input("What's your name? ").strip()
 
@@ -29,7 +29,6 @@ if matches:
     name = matches.group(2) + " " + matches.group(1)
 
 print(f"hello, {name}")
-
 
 
 
@@ -51,7 +50,6 @@ We can reverse this process by using non-capturing version
 
 non-capturing version
 (?:...)
-
 
 
 
