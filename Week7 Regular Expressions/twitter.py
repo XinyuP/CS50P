@@ -8,7 +8,6 @@ prompt user for the URL of their twitter profile
 extract username from that URL
 
 
-
 re.sub(pattern, repl, string, count=0, flags=0)
 
 
@@ -20,9 +19,9 @@ url = input("URL: ").strip()
 # username = url.replace("https://twitter.com/", "")
 # username = url.removeprefix("https://twitter.com/")
 
-username = re.sub(r"^https://twitter\.com/", "", url)
-username = re.sub(r"^https?://twitter\.com/", "", url)
-username = re.sub(r"^https?://(www\.)?twitter\.com/", "", url)
+# username = re.sub(r"^https://twitter\.com/", "", url)
+# username = re.sub(r"^https?://twitter\.com/", "", url)
+# username = re.sub(r"^https?://(www\.)?twitter\.com/", "", url)
 username = re.sub(r"^(https?://)?(www\.)?twitter\.com/", "", url)
 
 print(f"Username: {username}")
@@ -31,14 +30,12 @@ print(f"Username: {username}")
 
 
 
+# # non capturing in re.search()
+# username = re.search(r"^https?://(www\.)?twitter\.com/", url) # Username: ('www.',)
+# username = re.search(r"^https?://(www\.)?twitter\.com/(.*)", url) # Username: ('www.', 'davidjmalan')
+# username = re.search(r"^https?://(?:www\.)?twitter\.com/(.*)", url) # Username: ('davidjmalan',)
 
-
-# non capturing in re.search()
-username = re.search(r"^https?://(www\.)?twitter\.com/", url) # Username: ('www.',)
-username = re.search(r"^https?://(www\.)?twitter\.com/(.*)", url) # Username: ('www.', 'davidjmalan')
-username = re.search(r"^https?://(?:www\.)?twitter\.com/(.*)", url) # Username: ('davidjmalan',)
-
-print(f"Username: {username}")
+# print(f"Username: {username}")
 
 
 
