@@ -33,6 +33,16 @@ print(f"Username: {username}")
 
 
 
+# non capturing in re.search()
+username = re.search(r"^https?://(www\.)?twitter\.com/", url) # Username: ('www.',)
+username = re.search(r"^https?://(www\.)?twitter\.com/(.*)", url) # Username: ('www.', 'davidjmalan')
+username = re.search(r"^https?://(?:www\.)?twitter\.com/(.*)", url) # Username: ('davidjmalan',)
+
+print(f"Username: {username}")
+
+
+
+
 
 """
 re.sub(pattern, repl, string, count=0, flags=0)
