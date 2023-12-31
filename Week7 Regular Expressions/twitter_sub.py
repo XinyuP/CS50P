@@ -10,6 +10,8 @@ extract username from that URL
 
 re.sub(pattern, repl, string, count=0, flags=0)
 
+-> Cleaning up data and get rid of the data that we don't want 
+
 
 """
 import re
