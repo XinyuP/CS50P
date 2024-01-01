@@ -103,6 +103,16 @@ These are your basic letters and numbers. So,
 \w = [a-zA-Z0-9_]
 \W = [^a-zA-Z0-9_]
 
+\b Matches the empty string, but only at the beginning or end of a word.
+\B Matches the empty string, but only when it is not at the beginning or end of a word.
+
+```
+
+This means that r'\bfoo\b' matches 'foo', 'foo.', '(foo)', 'bar foo baz' but not 'foobar' or 'foo3'.
+
+This means that r'py\B' matches 'python', 'py3', 'py2', but not 'py', 'py.', or 'py!'. \B is just the opposite of \b,
+
+```
 
 \s matches any whitespace character.
 It includes space, tab(\t), newline (\n), carriage return (\r), form feed (\f), and vertical tab (\v).
@@ -336,3 +346,16 @@ Empty matches for the pattern split the string only when not adjacent to a previ
 ```
 
 """
+
+`re.findall(pattern, string, flags=0)`
+Return all non-overlapping matches of pattern in string, as a list of strings or tuples. The string is scanned left-to-right, and matches are returned in the order found. Empty matches are included in the result.
+
+The result depends on the number of capturing groups in the pattern. If there are no groups, return a list of strings matching the whole pattern. If there is exactly one group, return a list of strings matching that group. If multiple groups are present, return a list of tuples of strings matching the groups. Non-capturing groups do not affect the form of the result.
+
+```
+>>> re.findall(r'\bf[a-z]*', 'which foot or hand fell fastest')
+['foot', 'fell', 'fastest']
+>>> re.findall(r'(\w+)=(\d+)', 'set width=20 and height=10')
+[('width', '20'), ('height', '10')]
+
+```
