@@ -6,7 +6,7 @@ def main():
     print(convert(input("Hours: ")))
 
 
-# def convert2(s):
+# def convert(s):
 #     if time := re.match(r"(\d{1,2}):?(\d?\d?) (AM|PM) to (\d{1,2}):?(\d?\d?) (AM|PM)$", s):
 #         # print(time.groups())
 #         first_hour = int(time.group(1))
@@ -38,29 +38,28 @@ def main():
 #         raise ValueError
 
 
-
+def format(hr, min, x):
+    if x == "PM" and hr != 12:
+        hr += 12
+    elif x == "AM" and hr == 12:
+        hr = 0
+    return f"{hr:02}:{min:02}"
+    
 
 def convert(s):
     if time := re.match(r"(0?[1-9]|1[0-2]):?([0-5][0-9])? (AM|PM) to (0?[1-9]|1[0-2]):?([0-5][0-9])? (AM|PM)$", s):
         first_hour = int(time.group(1))
         first_minute = 0 if not time.group(2) else int(time.group(2))
         first_meridiem = time.group(3)
+
+        from_time = format(first_hour, first_minute, first_meridiem)
+
         second_hour = int(time.group(4))
         second_minute = 0 if not time.group(5) else int(time.group(5))
         second_meridiem = time.group(6)
+        to_time = format(second_hour, second_minute, second_meridiem)
         
-        if first_meridiem == "PM" and first_hour != 12:
-            first_hour += 12
-        elif first_meridiem == "AM" and first_hour == 12:
-            first_hour = 0
-
-        if second_meridiem == "PM" and second_hour != 12:
-            second_hour += 12
-        elif second_meridiem == "AM" and second_hour == 12:
-            second_hour = 0
-
-        # return f"{str(first_hour).zfill(2)}:{str(first_minute).zfill(2)} to {str(second_hour).zfill(2)}:{str(second_minute).zfill(2)}"
-        return f"{first_hour:02}:{first_minute:02} to {second_hour:02}:{second_minute:02}"
+        return f"{from_time} to {to_time}"
 
     else:
         raise ValueError
