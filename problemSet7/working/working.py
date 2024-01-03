@@ -6,6 +6,7 @@ def main():
     print(convert(input("Hours: ")))
 
 
+
 # def convert(s):
 #     if time := re.match(r"(\d{1,2}):?(\d?\d?) (AM|PM) to (\d{1,2}):?(\d?\d?) (AM|PM)$", s):
 #         # print(time.groups())
@@ -38,6 +39,7 @@ def main():
 #         raise ValueError
 
 
+########################################################
 def format(hr, min, x):
     if x == "PM" and hr != 12:
         hr += 12
@@ -57,6 +59,7 @@ def convert(s):
         second_hour = int(time.group(4))
         second_minute = 0 if not time.group(5) else int(time.group(5))
         second_meridiem = time.group(6)
+
         to_time = format(second_hour, second_minute, second_meridiem)
         
         return f"{from_time} to {to_time}"
@@ -72,7 +75,6 @@ if __name__ == "__main__":
 
 
 # # others: 
-    
 # def convert(s):
 #     regex = "(0?[1-9]|1[0-2]):?\.?([0-5][0-9])? (AM|PM)"
 #     match = re.search(r"^" + regex + " to " + regex + "$", s)
