@@ -30,7 +30,7 @@ def main():
 
 def parse(s):
     # if url := re.search(r"\"https?://(?:www\.)?youtube\.com/embed/(\w+)\".*$", s):
-    if url := re.search(r"\"https?://(?:www\.)?youtube\.com/embed/(.+?)\".*$", s):
+    if url := re.search(r"\"https?:\/\/(?:www\.)?youtube\.com\/embed\/(.+?)\".*$", s):
 
         return f"https://youtu.be/{url.group(1)}"
     return None
