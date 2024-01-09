@@ -67,10 +67,10 @@ response = requests.get(f"https://itunes.apple.com/search?entity=song&limit=50&t
 
 
 # Get the json object and convert to a Python dict
-o = response.json()
+response_dict = response.json() # convert JSON to dict
 
 
-for result in o["results"]:
+for result in response_dict["results"]:
     print(result["trackName"])
     
 

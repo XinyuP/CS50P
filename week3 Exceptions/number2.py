@@ -21,7 +21,7 @@ while True:
         x = int(input("What's x? "))
     except ValueError: # if something goes wrong
         print("x is not an integer")
-    else: 
+    else: # if nothing goes wrong, do this
         break
 
 print(f"x is {x}")
