@@ -4,23 +4,17 @@ class Wizard: # super class
             raise ValueError("Missing name")
         self.name = name
     
-    ...
         
-
 class Student(Wizard): # Student is a subclass of Wizard, Student inherits from Wizard, inherits all characteristics of Wizard
     def __init__(self, name, house):
         super().__init__(name)
         self.house = house
     
-    ...
-
 
 class Professor(Wizard):
     def __init__(self, name, subject):
         super().__init__(name)
-        self.subject = subject
-    
-    ...
+        self.subject = subject 
 
 
 

@@ -14,7 +14,7 @@ class Student:
     def __str__(self):
         return f"{self.name} from {self.house}"
 
-    @classmethod # be able to call get without having a student object in the universe already 
+    @classmethod # be able to call get() without having a student object in the universe already 
     def get(cls): # cls is a reference to the class itself 
         name = input("Name: ")
         house = input("House: ") 
